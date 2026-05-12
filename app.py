@@ -18,8 +18,7 @@ app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SECURE"] = False
 app.config["SESSION_COOKIE_PATH"] = "/"
 
-CORS(app, supports_credentials=True, origins=re.compile(r"http://localhost:\d+"))
-
+CORS(app, supports_credentials=True)
 db = SQLAlchemy(app)
 OPENAI_KEY = os.getenv("OPENAI_API_KEY", "")
 print("OpenAI Key Loaded:", bool(OPENAI_KEY))
